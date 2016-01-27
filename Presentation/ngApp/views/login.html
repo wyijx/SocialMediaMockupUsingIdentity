@@ -1,0 +1,10 @@
+﻿<form ng-submit="controller.login(username, password)">
+    <input ng-model="username" placeholder="Username" class="form-control" />
+    <input ng-model="password" type="password" placeholder="Password" class="form-control" />
+
+    <input type="submit" value="Log In" />
+</form>
+<div>
+    <a href="#/register">Create an Account</a>
+</div>
+<input class="btn btn-danger" type="submit" ng-click="controller.logout()" value="Logout" />

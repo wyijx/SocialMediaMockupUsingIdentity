@@ -1,0 +1,44 @@
+﻿<!-- Each row is a post -->
+<div class="row" ng-repeat="post in controller.posts">
+    <!-- Condensed Post View -->
+    <div ng-show="!post.expanded" class="col-md-12">
+        {{post.message}}
+        <div class="col-md-3">
+            <img class="img-responsive" ng-src="{{post.picture}}" />
+            <br />
+            {{post.createdDate}}
+        </div>
+        <div class="col-md-9">
+            <div class="col-md-12">
+                <a href="#/profile/{{post.owner.userName}}">{{post.owner.userName}}</a>
+            </div>
+            <div class="col-md-12">
+                {{post.message}}
+            </div>
+            <div class="col-md-offset-10 col-md-2" ng-click="post.expanded = true">
+                more
+            </div>
+        </div>
+    </div>
+    <!-- Big View -->
+    <div ng-show="post.expanded">
+        <div class="col-md-12">
+            <img class="img-responsive" ng-src="{{post.picture}}" />
+        </div>
+        <div class="col-md-2">
+            {{post.createdDate}}
+        </div>
+        <div class="col-md-offset-8 col-md-2">
+            {{post.location}}
+        </div>
+        <div class="col-md-12">
+            {{post.message}}
+        </div>
+        <div class="col-md-12">
+            <span ng-repeat="cat in post.categories"> {{cat}}</span>
+        </div>
+        <div class="col-md-offset-10 col-md-2" ng-click="post.expanded = false">
+            less
+        </div>
+    </div>
+</div>

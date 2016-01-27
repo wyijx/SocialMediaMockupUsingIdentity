@@ -1,0 +1,7 @@
+﻿<input ng-model="search" ng-model-options="{ debounce: 200 }" placeholder="Search Friends" />
+
+<ul>
+    <li ng-repeat="friend in controller.friends | filter: search">
+        <img ng-src="{{friend.profilePictureUrl}}" alt="" class="img-responsive" /> {{friend.userName}}
+    </li>
+</ul>
